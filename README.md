@@ -116,8 +116,9 @@ To rebuild and test purencool_studio_system locally
 ```
 docker build -t "purencool_studio_system:latest" . && \
 docker images && \
-docker run --name=purencool_studio_system -d -p 3000:3000 -t purencool_studio_system:latest && \
+docker run --mount type=bind,source="$(pwd)"/test,target=/user/src/app/mntdir --name=purencool_studio_system -d  -t purencool_studio_system:latest  && \
 docker exec -it purencool_studio_system  /bin/sh
+
 ```
 
 
