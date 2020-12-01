@@ -23,7 +23,7 @@ In order to run this container you'll need docker installed.
 Start service initially
 
 ```shell
- docker run --name=purencool_studio_system -d -p 3000:3000 -t purencool/purencool_studio_system:latest
+ docker run --mount type=bind,source="$(pwd)"/test,target=/user/src/app/mntdir --name=purencool_studio_system -d  -t purencool_studio_system:latest 
 ```
 
 Stop service 
