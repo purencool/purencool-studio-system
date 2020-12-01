@@ -1,13 +1,3 @@
 #!/bin/bash
 
-function installSystemFolders {
-  if [ ! -d "$(pwd)/mntdir/sites" ]; then
-     mkdir $(pwd)/mntdir/sites
-     mkdir $(pwd)/mntdir/.system
-     mkdir $(pwd)/mntdir/.system/incoming
-     mkdir $(pwd)/mntdir/.system/history
-     mkdir $(pwd)/mntdir/.system/logs
-  fi
-}
-
-installSystemFolders
+source $(dirname $0)/install_system_folders
